@@ -35,11 +35,6 @@ public class BioskopWithScanner07{
                 kolom = scan.nextInt();
                 scan.nextLine();
 
-                if(baris<1 || baris> penonton.length || kolom < 1 || kolom > penonton[0].length){
-                    System.out.println("Nomer Baris/Kolom Kursi Tidak Tersedia");
-                    continue;
-                }
-
                 penonton[baris-1][kolom-1] = nama;
 
                 System.out.println("Input penonton lainnya? (y/n): ");
