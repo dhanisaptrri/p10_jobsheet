@@ -7,7 +7,7 @@ public class Numbers07 {
 
         Scanner scan = new Scanner(System.in);
 
-        int[][] myNumbers = new int [3][];
+        int[][] myNumbers = new int [3][5];
         myNumbers[0] = new int[5];
         myNumbers[1] = new int[3];
         myNumbers[2] = new int[1];
