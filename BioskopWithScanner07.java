@@ -14,7 +14,9 @@ public class BioskopWithScanner07{
         String[][] penonton = new String[4][2];
 
         do{
+            System.out.println("====================");
             System.out.println("\t Menu");
+            System.out.println("====================");
             System.out.println("Input Data Penonton");
             System.out.println("Daftar Penonton");
             System.out.println("Exit");
@@ -35,7 +37,17 @@ public class BioskopWithScanner07{
                 kolom = scan.nextInt();
                 scan.nextLine();
 
-                penonton[baris-1][kolom-1] = nama;
+                   if(baris<1 || baris> penonton.length || kolom < 1 || kolom > penonton[0].length){
+                    System.out.println("Nomer Baris/Kolom Kursi Tidak Tersedia");
+                    continue;
+                }
+
+                        if(penonton[baris-1][kolom-1]  != null) {
+                            System.out.println("Kursi telah terisi, masukan baris dan kolom kembali.");
+                            continue;
+                        }else{
+                            penonton[baris-1][kolom-1] = nama;
+                        }
 
                 System.out.println("Input penonton lainnya? (y/n): ");
                 next = scan.nextLine();
@@ -51,7 +63,13 @@ public class BioskopWithScanner07{
                 System.out.println("===Tampilkan Daftar Penonton===");
                 for (int i = 0; i < penonton.length; i++){
                     for (int j = 0; j < penonton[i].length; j++) {
-                        System.out.println("Penonton pada baris " + (i+1) + ", kolom" + (j+1) + ": " + penonton[i][j]);
+                        if(penonton[i][j] != null){
+                             System.out.println("Penonton pada baris " + (i+1) + ", kolom" + (j+1) + ": " + penonton[i][j]);
+                        }else{
+                            System.out.println("Penonton pada baris " + (i+1) + ". kolom " + (j+1) + ": " + "***");
+
+                        }
+                       
                     }
                 }
                     break;//break menu2
